@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Calculate factorial
+n=$1
+factorial=1
+
+if [ -z $n ]; then
+    echo "Provide atleast number"
+    exit 1
+fi
+
+if [ $n -eq 0 ] || [ $n -eq 1 ]; then
+    factorial=1
+else
+    for i in $(seq 2 $n); do
+        factorial=$((factorial * i))
+    done
+fi
+
+echo "factorial of $n is $factorial"
