@@ -4,11 +4,20 @@
 n=$1
 factorial=1
 
-if [ -z $n ]; then
-    echo "Provide atleast number"
+
+# Command should take at least 1 argument
+if [ -z $# -eq 0 ]; then
+    echo "Provide atleast one argument"
     exit 1
 fi
 
+# Cannot find factorial of numbers less than 0
+if [ $n -lt 0 ]; then
+    echo "Cannot find factorial of numbers less than 0"
+    exit 1
+fi
+
+# factorial of 0 or 1 is 1
 if [ $n -eq 0 ] || [ $n -eq 1 ]; then
     factorial=1
 else
@@ -17,4 +26,4 @@ else
     done
 fi
 
-echo "factorial of $n is $factorial"
+echo "Factorial of $n is $factorial"
