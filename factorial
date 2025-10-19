@@ -6,8 +6,8 @@ factorial=1
 
 
 # Command should take at least 1 argument
-if [ -z $# -eq 0 ]; then
-    echo "Provide atleast one argument"
+if [ $# -ne 1 ]; then
+    echo "Provide only one argument"
     exit 1
 fi
 
